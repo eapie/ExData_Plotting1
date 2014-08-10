@@ -1,0 +1,16 @@
+{
+    "contents" : "# Exploratory Data Analysis Assignment 1\n#Plot 4\n\nfile <- \"C:/Users/Liz/Desktop/DataScienceSpecialisation/4_Exploratory_Data_Analysis/household_power_consumption.txt\"\nelectricData <- read.table(file, header = TRUE, sep =\";\", stringsAsFactors = FALSE )\ndf <- electricData[(electricData$Date ==\"1/2/2007\" | electricData$Date == \"2/2/2007\"),]\n\ndf$dateTime <- strptime(paste(df$Date, df$Time), \"%d/%m/%Y %H:%M:%S\")\n\n##  Open a new default device.\nget( getOption( \"device\" ) )()\n\n##  Set up plotting in two rows and two columns, plotting along rows first.\npar( mfrow = c( 2, 2 ) )\n\n##  The first plot is located in row 1, column 1:\nplot(df$dateTime, df$Global_active_power, xlab=\"\",ylab=\"Global Active Power\", type = \"l\" , width=480, height=480)\n\n##  The second plot is located in row 1, column 2:\nplot(df$dateTime, df$Voltage, xlab=\"datetime\",ylab=\"Voltage\", type = \"l\", width=480, height=480)\n\n##  The third plot is located in row 2, column 1:\ndf$dateTime <- strptime(paste(df$Date, df$Time), \"%d/%m/%Y %H:%M:%S\")\nplot(df$dateTime, df$Sub_metering_1, col=\"black\", xlab=\"\", ylab=\"Energy Sub Metering\", type = \"l\", width=480, height=480)\nlegend(\"topright\", c(\"Sub_metering_1\",\"Sub_metering_2\",\"Sub_metering_3\"), lwd = c(1,1,1), col=c(\"black\",\"red\",\"blue\"))\nlines(df$dateTime, df$Sub_metering_2, col=\"red\", type = \"l\")\nlines(df$dateTime, df$Sub_metering_3, col=\"blue\", type = \"l\")\n\n##  The fourth plot is located in row 2, column 2:\nplot(df$dateTime, df$Global_reactive_power, xlab=\"datetime\",ylab=\"Global_reactive_power\", type = \"l\", width=480, height=480)\ndev.copy(png,\"Plot4.png\")\ndev.off()",
+    "created" : 1407688711653.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "872690778",
+    "id" : "303D812D",
+    "lastKnownWriteTime" : 1407670833,
+    "path" : "C:/Users/Liz/ExData_Plotting1/plot4.R",
+    "project_path" : "plot4.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

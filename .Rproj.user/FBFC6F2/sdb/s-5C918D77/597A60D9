@@ -1,0 +1,17 @@
+{
+    "contents" : "# Exploratory Data Analysis Assignment 1\n# Plot1.R\n\n# Read in the data.\n# Date;Time;Global_active_power;Global_reactive_power;Voltage;Global_intensity;Sub_metering_1;Sub_metering_2;Sub_metering_3\n# 16/12/2006;17:24:00;4.216;0.418;234.840;18.400;0.000;1.000;17.000\n\nfile <- \"C:/Users/Liz/Desktop/DataScienceSpecialisation/4_Exploratory_Data_Analysis/household_power_consumption.txt\"\nelectricData <- read.table(file, header = TRUE, sep =\";\", stringsAsFactors = FALSE )\n\nelectricData<- electricData[(electricData$Date ==\"1/2/2007\" | electricData$Date == \"2/2/2007\"),]\n\nelectricData$formatDate <- as.Date(electricData$Date, \"%d/%m/%Y\")\nelectricData$formatTime <- strptime(electricData$Time, \"%H:%M:$S\")\nelectricData$Global_active_power <- as.numeric(as.character(electricData$Global_active_power))\nhist(electricData$Global_active_power, main=\"Global Active Power\", col=\"red\", xlab = \"Global Active Power (kilowatts)\", xlim=c(0,6 ), yaxt='n',width = 480, height=480)\naxis(2, axTicks(2), format(axTicks(2), scientific = F))\n\n\ndev.copy(png,\"Plot1.png\")\ndev.off()\n\n",
+    "created" : 1407262887559.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4127519855",
+    "id" : "597A60D9",
+    "lastKnownWriteTime" : 1407688417,
+    "path" : "C:/Users/Liz/ExData_Plotting1/plot1.R",
+    "project_path" : "plot1.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

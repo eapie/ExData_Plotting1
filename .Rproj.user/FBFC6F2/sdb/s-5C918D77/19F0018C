@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1407356526356.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "19F0018C",
+    "lastKnownWriteTime" : 27866499440705583,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "electricData",
+        "contentUrl" : "content?title=electricData&file=429d3dcfe9a745c5942f8938ab8248a1.htm",
+        "displayedObservations" : "1000",
+        "displayedVariables" : 12,
+        "totalObservations" : "2075259",
+        "variables" : "12"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
